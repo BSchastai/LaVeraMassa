@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - La Vera Massa</title>
+    <link rel="shortcut icon" href="Image/Icon/LaVeraMassaFull.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Capa Menor para páginas internas */
+        .page-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=2032');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        .page-hero h1 { color: var(--cor-dourado); font-size: 4rem; margin-bottom: 10px; }
+
+        /* Layout de História (Zigue-Zague) */
+        .history-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 80px;
+            padding: 0 10%;
+        }
+        
+        /* Inverte a ordem em linhas pares (Zigue-Zague) */
+        .history-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .history-text { flex: 1; }
+        .history-text h3 { font-size: 2rem; margin-bottom: 20px; color: var(--cor-vinho); }
+        .history-text p { font-size: 1.1rem; color: #555; text-align: justify; margin-bottom: 15px; }
+
+        .history-img { 
+            flex: 1; 
+            height: 400px; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            box-shadow: var(--sombra-suave);
+            position: relative;
+        }
+        
+        /* Borda decorativa na foto */
+        .history-img::after {
+            content: '';
+            position: absolute;
+            top: 15px; left: 15px; right: 15px; bottom: 15px;
+            border: 2px solid rgba(255,255,255,0.6);
+            pointer-events: none;
+        }
+
+        .history-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .history-img:hover img { transform: scale(1.05); }
+
+        /* Botões de Ação no final */
+        .action-buttons { text-align: center; margin-bottom: 80px; display: flex; gap: 20px; justify-content: center;}
+        .btn-secundario { 
+            background-color: transparent; 
+            border: 2px solid var(--cor-vinho); 
+            color: var(--cor-vinho); 
+            padding: 12px 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn-secundario:hover { background-color: var(--cor-vinho); color: white; }
+
+        @media (max-width: 900px) {
+            .page-hero { height: 40vh; }
+            .page-hero h1 { font-size: 3rem; }
+            .history-section { flex-direction: column !important; gap: 30px; padding: 0 5%; }
+            .history-img { width: 100%; height: 250px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="navbar">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Image/Icon/LaVeraMassaFull.ico" alt="La Vera Massa" style="height: 50px; width: auto; margin-right: 10px;">
+                <span class="logo-text">La Vera Massa</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="sobre.html" style="color:var(--cor-dourado);">Sobre Nós</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="index.html#reservas">Reservas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div>
+            <span class="italiano-font" style="color: #fff; font-size: 3rem;">Nossa Trajetória</span>
+            <h1>Uma História de Amor e Farinha</h1>
+        </div>
+    </section>
+
+    <div class="container-historia">
+        
+        <div class="history-section">
+            <div class="history-text">
+                <span class="italiano-font" style="font-size: 2rem; text-align: left; display: block;">1950 • Puglia, Itália</span>
+                <h3>Onde Tudo Começou</h3>
+                <p>O coração pulsante daquela atmosfera acolhedora era a figura serena de <strong>Nonna Emilia</strong>. Nas terras férteis do sul da Itália, ela aprendeu desde criança que a cozinha não era apenas um lugar de preparar alimentos, mas um templo de alquimia onde ingredientes simples se transformavam em afeto.</p>
+                <p>As massas eram feitas à mão, com a paciência de um artesão. Os molhos borbulhavam em panelas de barro por horas, carregando o sabor do sol e da terra mediterrânea.</p>
+            </div>
+            <div class="history-img">
+                <img src="Image/Sobre/Nonna.ico" alt="Nonna" style="object-fit: cover;">
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-text">
+                <span class="italiano-font" style="font-size: 2rem; text-align: left; display: block;">1985 • Paraná, Brasil</span>
+                <h3>Raízes no Brasil</h3>
+                <p>A travessia do oceano trouxe a família para o interior do Paraná, mas a alma continuou italiana. Mesmo longe de casa, Nonna Emilia manteve vivas as tradições. Adaptou-se aos ingredientes locais, descobrindo nos campos brasileiros a mesma riqueza que via na Puglia.</p>
+                <p>Seus filhos e netos cresceram embalados pelo aroma de manjericão fresco e pão assado que emanava de sua cozinha todos os domingos.</p>
+            </div>
+            <div class="history-img">
+                <img src="Image/Sobre/Interior.ico" alt="Mãos na Massa">
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-text">
+                <span class="italiano-font" style="font-size: 2rem; text-align: left; display: block;">Hoje • Ponta Grossa</span>
+                <h3>O Sonho de Sofia</h3>
+                <p>Sofia, neta de Emilia e designer de formação, sentiu um chamado irresistível para honrar esse legado. Imaginou um espaço onde a autenticidade da cozinha da avó encontrasse uma estética moderna e acolhedora.</p>
+                <p>Assim nasceu o <strong>La Vera Massa</strong>. Um casarão restaurado no centro da cidade, onde cada detalhe, das fotografias em preto e branco nas paredes à iluminação suave, conta uma parte dessa história.</p>
+            </div>
+            <div class="history-img">
+                <img src="Image/Sobre/Restaurante.ico" alt="Restaurante La Vera Massa">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="action-buttons">
+        <a href="index.html#reservas" class="btn-ver-mais" style="background-color: #4CAF50; border: none;">Faça sua Reserva</a>
+        <a href="cardapio.html" class="btn-secundario">Veja Nosso Cardápio</a>
+    </div>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="Image/Icon/LaVeraMassaFull.ico" alt="Logo" style="height: 90px; margin-bottom: 15px;">
+                <h3 class="footer-logo-text">La Vera Massa</h3>
+                <p style="font-style: italic;">"A verdadeira massa,<br>uma herança de família."</p>
+            </div>
+            <div class="footer-col">
+                <h4>Endereço</h4>
+                <p>Rua das Oliveiras, 123</p>
+                <p>Centro, Ponta Grossa - PR</p>
+                <br>
+                <h4>Contato</h4>
+                <p>(42) 3220-1234</p>
+                <p>contato@laveramassa.com.br</p>
+            </div>
+            <div class="footer-col">
+                <h4>Horários</h4>
+                <p><strong>Almoço:</strong><br>Ter a Dom - 12h às 15h</p>
+                <br>
+                <p><strong>Jantar:</strong><br>Seg a Sáb - 19h às 23h</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copy">&copy; 2025 La Vera Massa. Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

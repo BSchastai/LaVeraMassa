@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - La Vera Massa</title>
+    <link rel="shortcut icon" href="Image/Icon/LaVeraMassaFull.ico" type="image/x-icon">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar" style="background-color: var(--cor-rodape);">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Image/Icon/LaVeraMassaFull.ico" alt="La Vera Massa" style="height: 50px; width: auto; margin-right: 10px;">
+                <span class="logo-text">La Vera Massa</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="cardapio.html" style="color: var(--cor-dourado);">Cardápio</a></li>
+                <li><a href="index.html#reservas">Reservas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-header">
+        <span class="italiano-font">Cardápio</span>
+        <h1>Nossos Especiais de Hoje</h1>
+    </section>
+
+    <section class="menu-specials">
+        <div class="special-card">
+            <div class="badge">Recomendação do Chef</div>
+            <div class="special-img-box">
+                <img src="Image/Cardapio/Gnocchi.ico" alt="Gnocchi">
+            </div>
+            <div class="special-info">
+                <h3>Gnocchi al Gorgonzola e Noci</h3>
+                <p class="special-highlight-text">Uma nuvem de batata, a nobreza do gorgonzola e o toque crocante das nozes. - Chef Luca</p>
+                <p>Gnocchi artesanal de batata em molho aveludado de gorgonzola dolce, finalizado com nozes tostadas e sálvia fresca.</p>
+                <span class="price">R$ 145,00</span>
+            </div>
+        </div>
+
+        <div class="special-card main">
+            <div class="badge">Prato da Casa</div>
+            <div class="special-img-box">
+                <img src="Image/Cardapio/LaPunta.ico" alt="La Punta d Oro">
+            </div>
+            <div class="special-info">
+                <h3>La Punta d'Oro</h3>
+                <p class="special-highlight-text">Onde a nobreza do mar encontra a riqueza da terra.</p>
+                <p>Massa fresca artesanal ao molho de açafrão, servida com cauda de lagosta, camarões e finalizada com lâminas de trufas negras.</p>
+                <span class="price">R$ 185,00</span>
+            </div>
+        </div>
+
+        <div class="special-card">
+            <div class="badge">Prato do Dia</div>
+            <div class="special-img-box">
+                <img src="Image/Cardapio/Pappardelle.ico" alt="Pappardelle">
+            </div>
+            <div class="special-info">
+                <h3>Pappardelle al Ragù di Agnello</h3>
+                <p class="special-highlight-text">O sabor reconfortante de um domingo na Toscana.</p>
+                <p>Nossas fitas largas de massa fresca artesanal, servidas com um robusto ragu de cordeiro cozido lentamente por horas em vinho tinto e ervas frescas, finalizado com lascas de queijo Pecorino.</p>
+                <span class="price">R$ 135,00</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="full-menu-list" class="full-menu-list">
+        </section>
+
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="Image/Icon/LaVeraMassaFull.ico" alt="Logo" style="height: 90px; margin-bottom: 15px;">
+                <h3 class="footer-logo-text">La Vera Massa</h3>
+                <p style="font-style: italic;">"A verdadeira massa,<br>uma herança de família."</p>
+            </div>
+            <div class="footer-col">
+                <h4>Endereço</h4>
+                <p>Rua das Oliveiras, 123</p>
+                <p>Centro, Ponta Grossa - PR</p>
+                <br>
+                <h4>Contato</h4>
+                <p>(42) 3220-1234</p>
+                <p>contato@laveramassa.com.br</p>
+            </div>
+            <div class="footer-col">
+                <h4>Horários</h4>
+                <p><strong>Almoço:</strong><br>Ter a Dom - 12h às 15h</p>
+                <br>
+                <p><strong>Jantar:</strong><br>Seg a Sáb - 19h às 23h</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copy">&copy; 2025 La Vera Massa. Todos os direitos reservados.</div>
+    </footer>
+
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
