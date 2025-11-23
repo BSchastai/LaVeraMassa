@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoIntegrador.Entities
 {
@@ -19,5 +19,10 @@ namespace ProjetoIntegrador.Entities
         // Controle
         public DateTime DataPedido { get; set; }
         public int Status { get; set; } // 0=Recebido, 1=Saiu para Entrega, 2=Entregue
+
+        public long? PratoId { get; set; }
+
+        [ForeignKey("PratoId")]
+        public virtual Prato Prato { get; set; }
     }
 }

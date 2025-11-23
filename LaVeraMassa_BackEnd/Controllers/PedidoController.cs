@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjetoIntegrador.Entities;
 using ProjetoIntegrador.Repositories.RepositoryBase;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 
 namespace ProjetoIntegrador.Controllers
 {
@@ -27,11 +28,13 @@ namespace ProjetoIntegrador.Controllers
                 var pedidos = await _unitOfWork.Pedidos.GetAllAsync();
                 var pratos = await _unitOfWork.Prato.GetAllAsync();
                 var mesas = await _unitOfWork.Mesas.GetAllAsync();
+                var delivery = await _unitOfWork.Delivery.GetAllAsync();
 
                 // 2. Converte para listas em memória
                 var listaPedidos = pedidos.ToList();
                 var listaPratos = pratos.ToList();
                 var listaMesas = mesas.ToList();
+                var listaDelivery = delivery.ToList();
 
                 // 3. Cruza os dados manualmente (JOIN na memória)
                 var listaVisual = listaPedidos
@@ -63,7 +66,24 @@ namespace ProjetoIntegrador.Controllers
                     .ThenBy(p => p.Id)
                     .ToList();
 
-                return Ok(listaVisual);
+                var visualDelivery = delivery.
+                    Where(d => d.Status < 3)
+                    .Select(d =>
+                    {
+                        return new
+                        {
+                            d.Id,
+                            d.Status,
+                            MesaNumero = "Delivery",
+                            Pratos = d.ItensResumo
+                        };
+                    });
+
+                return Ok(new
+                {
+                    listaVisual,
+                    visualDelivery
+                });
             }
             catch (Exception ex)
             {
