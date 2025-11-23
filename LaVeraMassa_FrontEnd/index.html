@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Vera Massa - Trattoria</title>
     <link rel="shortcut icon" href="Image/Icon/LaVeraMassaFull.ico" type="image/x-icon">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +28,7 @@
             </a>
             <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="/sobre.html">Sobre Nós</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
                 <li><a href="#cardapio">Cardápio</a></li>
                 <li><a href="#reservas">Reservas</a></li>
                 <li><a href="#contato">Contato</a></li>
@@ -31,8 +38,8 @@
 
     <section class="hero">
         <div class="slider-container">
-            <div class="slide"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974" alt="Massa"></div>
-            <div class="slide"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070" alt="Ambiente"></div>
+            <div class="slide"><img src="Image/Index/img1.ico" alt="Massa"></div>
+            <div class="slide"><img src="Image/Index/img2.ico" alt="Ambiente"></div>
             <div class="slide"><img src="https://images.unsplash.com/photo-1595295333158-4742f28fbd85?q=80&w=2080" alt="Prato"></div>
         </div>
         <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
@@ -42,7 +49,7 @@
     <section id="sobre" class="sobre">
         <h2>Sobre Nós</h2>
         <p>O <strong>La Vera Massa</strong> nasceu de uma herança de sabor que cruzou o oceano, da Puglia, na Itália, até o coração do Paraná. É o legado da Nonna Emilia, que nos ensinou que a "verdadeira massa" é feita com paciência, ingredientes frescos e, acima de tudo, com afeto.</p>
-        <a href="#" class="link-historia">Conheça nossa história completa <i class="fas fa-arrow-right"></i></a>
+        <a href="sobre.html" class="link-historia">Conheça nossa história completa <i class="fas fa-arrow-right"></i></a>
     </section>
 
     <section id="cardapio" class="cardapio-preview">
@@ -50,6 +57,7 @@
             <span class="italiano-font">Cardápio</span>
             <h2>Nossas Especialidades</h2>
         </div>
+
         <div class="grid-pratos">
             <div class="prato-card">
                 <img src="Image/Index/Tortelli.ico" alt="Tortelli" class="prato-img">
@@ -85,40 +93,43 @@
             <h2>Faça sua reserva!</h2>
             <p style="color: #888; font-size: 0.9rem;">Reservas acima de 06 pessoas, favor entrar em contato.</p>
         </div>
+
         <div class="reservas-wrapper">
             <div class="form-side">
                 <form>
                     <div class="form-row">
                         <div class="input-wrapper">
                             <i class="far fa-calendar-alt"></i>
-                            <input type="text" onfocus="(this.type='date')" placeholder="dd/mm/aaaa">
+                            <input type="text" id="dataReserva" placeholder="Selecione a Data" required>
                         </div>
                         <div class="input-wrapper small">
                             <i class="fas fa-user-friends"></i>
-                            <input type="number" placeholder="Pessoas" min="1" max="6">
+                            <input type="number" placeholder="Pessoas" min="1" max="6" required>
                         </div>
                     </div>
+
                     <div class="input-wrapper">
                         <i class="far fa-clock"></i>
-                        <select>
-                            <option value="" disabled selected>Selecione o Horário</option>
-                            <option>19:00</option>
-                            <option>20:00</option>
-                            <option>21:00</option>
+                        <select id="horarioReserva" required>
+                            <option value="" disabled selected>Selecione a Data Primeiro</option>
                         </select>
                     </div>
+
                     <div class="input-wrapper">
                         <i class="far fa-user"></i>
-                        <input type="text" placeholder="Nome e Sobrenome">
+                        <input type="text" placeholder="Nome e Sobrenome" required>
                     </div>
+
                     <div class="input-wrapper">
                         <i class="fas fa-mobile-alt"></i>
-                        <input type="tel" placeholder="Telefone com DDD">
+                        <input type="tel" placeholder="Telefone com DDD" required>
                     </div>
+
                     <div class="input-wrapper">
                         <i class="far fa-envelope"></i>
-                        <input type="email" placeholder="E-mail">
+                        <input type="email" placeholder="E-mail" required>
                     </div>
+
                     <button type="submit" class="btn-reserva">Reservar</button>
                 </form>
             </div>
@@ -126,6 +137,7 @@
                 <img src="Image/Index/MapsLocal.ico" alt="Mapa">
             </div>
         </div>
+
         <div class="reserva-termos">
             <p>– Não podemos garantir que as mesas reservadas estarão localizadas no local de sua preferência.</p>
             <p>– A tolerância no horário de chegada é de 15 minutos em relação ao horário reservado.</p>
@@ -139,54 +151,48 @@
         
         <div class="carousel-window">
             <div class="reviews-track">
-                
-                <div class="review-card critico" onclick="abrirReview('Paola Carosella', 'Um respiro de honestidade. Encontrei aqui o respeito ao ingrediente que tanto busco. A massa fresca é de uma delicadeza impressionante e o molho tem a acidez perfeita. Voltarei com certeza!', 5, true)">
+                <div class="review-card critico" onclick="abrirReview('Paola Carosella', 'Um respiro de honestidade. Encontrei aqui o respeito ao ingrediente que tanto busco...', 5, true)">
                     <img src="Image/Index/PaolaCarosella.ico" class="avatar">
                     <h3>Paola Carosella</h3>
                     <span class="selo-critico">Crítico Gastronômico</span>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Um respiro de honestidade. Encontrei aqui o respeito ao ingrediente que tanto busco..."</p>
+                    <p>"Um respiro de honestidade. Encontrei aqui o respeito ao ingrediente..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
-
-                <div class="review-card" onclick="abrirReview('Carlos M.', 'Lugar sensacional! A comida demorou um pouquinho, mas valeu cada segundo de espera. O vinho sugerido pelo sommelier harmonizou perfeitamente com o prato.', 4, false)">
+                <div class="review-card" onclick="abrirReview('Carlos M.', 'Lugar sensacional! A comida demorou um pouquinho, mas valeu cada segundo...', 4, false)">
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar">
                     <h3>Carlos M.</h3>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
-                    <p>"Lugar sensacional! A comida demorou um pouquinho, mas valeu cada segundo de espera..."</p>
+                    <p>"Lugar sensacional! A comida demorou um pouquinho..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
-
-                <div class="review-card" onclick="abrirReview('Fernanda S.', 'Ambiente super romântico e acolhedor. O atendimento foi impecável do início ao fim. Recomendo o Tiramisu de sobremesa, é divino!', 5, false)">
+                <div class="review-card" onclick="abrirReview('Fernanda S.', 'Ambiente super romântico e acolhedor. O atendimento foi impecável...', 5, false)">
                     <img src="https://randomuser.me/api/portraits/women/68.jpg" class="avatar">
                     <h3>Fernanda S.</h3>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Ambiente super romântico e acolhedor. O atendimento foi impecável do início ao fim..."</p>
+                    <p>"Ambiente super romântico e acolhedor..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
-
-                <div class="review-card" onclick="abrirReview('João P.', 'Muito bom, mas achei um pouco caro. Pela qualidade vale a pena para ocasiões especiais.', 4, false)">
+                <div class="review-card" onclick="abrirReview('João P.', 'Muito bom, mas achei um pouco caro. Pela qualidade vale a pena.', 4, false)">
                     <img src="https://randomuser.me/api/portraits/men/85.jpg" class="avatar">
                     <h3>João P.</h3>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-                    <p>"Muito bom, mas achei um pouco caro. Pela qualidade vale a pena para ocasiões especiais..."</p>
+                    <p>"Muito bom, mas achei um pouco caro..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
-
-                <div class="review-card critico" onclick="abrirReview('Massimo Bottura', 'Visitar o La Vera Massa foi encontrar um pedaço da alma italiana que dialoga com seu novo território. O chef não apenas cozinha, ele conta uma história.', 5, true)">
+                <div class="review-card critico" onclick="abrirReview('Massimo Bottura', 'Visitar o La Vera Massa foi encontrar um pedaço da alma italiana...', 5, true)">
                     <img src="Image/Index/MassimoBottura.ico" class="avatar">
                     <h3>Massimo Bottura</h3>
                     <span class="selo-critico">Chef Michelin</span>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Visitar o La Vera Massa foi encontrar um pedaço da alma italiana que dialoga com seu novo território..."</p>
+                    <p>"Visitar o La Vera Massa foi encontrar um pedaço da alma italiana..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
-
-                 <div class="review-card" onclick="abrirReview('Roberto G.', 'Jantar de aniversário foi perfeito. A equipe cantou parabéns em italiano e a sobremesa veio com uma vela. Memória inesquecível!', 5, false)">
+                 <div class="review-card" onclick="abrirReview('Roberto G.', 'Jantar de aniversário foi perfeito. A equipe cantou parabéns!', 5, false)">
                     <img src="https://randomuser.me/api/portraits/men/22.jpg" class="avatar">
                     <h3>Roberto G.</h3>
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p>"Jantar de aniversário foi perfeito. A equipe cantou parabéns em italiano e a sobremesa veio com uma vela..."</p>
+                    <p>"Jantar de aniversário foi perfeito..."</p>
                     <span class="ver-mais-review">Ler mais</span>
                 </div>
             </div>
@@ -200,6 +206,15 @@
             <div id="modal-selo-container"></div> 
             <div id="modal-stars" class="stars"></div>
             <p id="modal-text">Texto...</p>
+        </div>
+    </div>
+
+    <div id="msg-modal" class="modal-msg">
+        <div class="modal-msg-content">
+            <div id="msg-icon"></div>
+            <h3 id="msg-title">Título</h3>
+            <p id="msg-text">Mensagem aqui...</p>
+            <button id="msg-close-btn">Fechar</button>
         </div>
     </div>
 

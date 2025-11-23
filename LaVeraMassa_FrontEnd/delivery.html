@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça seu Pedido - La Vera Massa</title>
+    <link rel="shortcut icon" href="Image/Icon/LaVeraMassaFull.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar" style="background-color: var(--cor-rodape);">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="Image/Icon/LaVeraMassaFull.ico" alt="La Vera Massa" style="height: 50px; width: auto; margin-right: 10px;">
+                <span class="logo-text">La Vera Massa</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="delivery.html" style="color: var(--cor-dourado); border: 1px solid var(--cor-dourado); padding: 5px 15px; border-radius: 20px;">Pedido Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-header" style="padding-bottom: 20px;">
+        <span class="italiano-font">Delivery</span>
+        <h1>Monte seu Pedido</h1>
+        <p style="text-align: center; color: #666; margin-top: 10px;">Selecione os itens abaixo e receba o sabor da Itália em casa.</p>
+    </section>
+
+    <section id="delivery-menu-list" class="full-menu-list">
+        </section>
+
+    <div id="cart-float-btn" onclick="abrirCarrinho()">
+        <i class="fas fa-shopping-basket"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-content">
+            <span class="close-btn" onclick="fecharCarrinho()">&times;</span>
+            <div class="cart-header">
+                <h3><i class="fas fa-motorcycle"></i> Seu Carrinho</h3>
+            </div>
+            
+            <div id="cart-items-container" class="cart-items-list">
+                <p class="empty-msg">Seu carrinho está vazio.</p>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-value">R$ 0,00</span>
+                </div>
+                
+                <form id="form-delivery">
+                    <h4>Dados de Entrega</h4>
+                    <input type="text" id="del-nome" placeholder="Seu Nome Completo" required>
+                    <input type="tel" id="del-tel" placeholder="Seu Telefone / WhatsApp" required>
+                    <input type="text" id="del-endereco" placeholder="Endereço (Rua, Número, Bairro, Comp.)" required>
+                    
+                    <label style="display:block; margin-top:10px; font-weight:bold; color:#555;">Pagamento na Entrega:</label>
+                    <select id="del-pagamento">
+                        <option value="Pix">Pix</option>
+                        <option value="Cartão de Crédito">Cartão de Crédito</option>
+                        <option value="Cartão de Débito">Cartão de Débito</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                    </select>
+
+                    <button type="submit" class="btn-finalizar">Confirmar Pedido</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="msg-modal" class="modal-msg">
+        <div class="modal-msg-content">
+            <div id="msg-icon"></div>
+            <h3 id="msg-title">Título</h3>
+            <p id="msg-text">Mensagem...</p>
+            <button id="msg-close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <footer id="contato">
+        <div class="copy">&copy; 2025 La Vera Massa - Delivery System.</div>
+    </footer>
+
+    <script src="dados.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

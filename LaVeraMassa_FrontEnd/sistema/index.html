@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistema La Vera Massa</title>
+    
+    <link rel="shortcut icon" href="../Image/Icon/LaVeraMassaFull.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="login-page">
+        <div class="login-card">
+            <div class="login-header">
+                <img src="../Image/Icon/LaVeraMassaFull.ico" alt="La Vera Massa Logo">
+                <h2 class="italiano-font">La Vera Massa</h2>
+                <p>Sistema Interno</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="login-user">Usuário</label> <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="login-user" placeholder="Ex: Nome Sobrenome" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="login-pass">Senha</label> <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="login-pass" placeholder="••••••••" required>
+                        
+                        <i class="fas fa-eye" id="btn-ver-senha"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-login">ACESSAR</button>
+            </form>
+
+            <div class="login-footer">
+                <p><i class="fas fa-info-circle"></i> Acesso Restrito</p>
+                <span>Somente funcionários autorizados.</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
