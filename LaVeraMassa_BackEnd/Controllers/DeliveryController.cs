@@ -46,8 +46,22 @@ namespace ProjetoIntegrador.Controllers
                 Status = 0 // 0 = Novo Pedido
             };
 
+            var novaVenda = new Venda
+            {
+                ValorTotal = novoPedido.ValorTotal,
+                DataVenda = DateTime.Now, // Pega a hora atual do servidor (Brasília/Local)
+                FormaPagamento = "Padrão"
+            };
+
             await _unitOfWork.Delivery.AddAsync(novoPedido);
+            await _unitOfWork.Vendas.AddAsync(novaVenda);
             await _unitOfWork.CompleteAsync();
+
+
+            // Se seu UnitOfWork não tiver Vendas, precisaremos adicionar.
+            // Vou assumir que você pode usar: _context.Vendas.Add(novaVenda) se tiver o context injetado
+            // OU, se tiver adicionado no UnitOfWork:
+            await _unitOfWork.Vendas.AddAsync(novaVenda);
 
             return Ok(new { mensagem = "Pedido recebido com sucesso!", id = novoPedido.Id });
         }
