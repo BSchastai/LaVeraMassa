@@ -1,0 +1,10 @@
+# Ignorar arquivos temporários do Visual Studio
+.vs/
+.vscode/
+
+# Ignorar pastas de Build do C# (Pesadas e inúteis no Git)
+**/bin/
+**/obj/
+
+# Ignorar arquivos de usuário
+*.user
