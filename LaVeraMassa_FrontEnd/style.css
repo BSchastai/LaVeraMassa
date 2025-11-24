@@ -583,3 +583,69 @@ footer { background-color: var(--cor-rodape); color: #ccc; padding: 60px 10% 20p
     z-index: 20; 
 }
 .close-btn:hover { color: var(--cor-vinho); }
+
+/* === BOTÕES DE DELIVERY === */
+
+/* 1. Botão na Navbar (Pequeno e elegante) */
+.btn-nav-delivery {
+    background-color: var(--cor-dourado);
+    color: #fff !important; /* Força a cor branca */
+    padding: 8px 20px;
+    border-radius: 25px;
+    transition: 0.3s;
+    border: 1px solid var(--cor-dourado);
+    text-shadow: none !important; /* Remove sombra de texto para ficar limpo */
+}
+
+.btn-nav-delivery:hover {
+    background-color: transparent;
+    color: var(--cor-dourado) !important;
+    border: 1px solid var(--cor-dourado);
+}
+
+/* 2. Botão na Capa/Hero (Grande e Chamativo) */
+.btn-hero-delivery {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background-color: var(--cor-dourado); /* Dourado */
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px; /* Bordas bem redondas */
+    transition: all 0.3s ease;
+    border: 2px solid var(--cor-dourado);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-hero-delivery i {
+    margin-right: 10px;
+}
+
+.btn-hero-delivery:hover {
+    background-color: transparent;
+    color: var(--cor-dourado);
+    border: 2px solid var(--cor-dourado);
+    transform: translateY(-3px); /* Efeito de subir um pouquinho */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Ajuste Mobile para o botão da Hero não ficar gigante demais */
+@media (max-width: 900px) {
+    .btn-hero-delivery {
+        padding: 12px 30px;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    
+    /* No menu mobile, o botão fica normal */
+    .btn-nav-delivery {
+        background-color: transparent;
+        border: 1px solid #fff;
+        margin-top: 10px;
+    }
+}

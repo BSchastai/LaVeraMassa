@@ -140,9 +140,9 @@
             </section>
             <section id="sec-mesas" class="panel-section" style="display: none;">
                 <div class="actions-bar">
-                    <button class="btn-add" onclick="criarNovaMesa()">
-                        <i class="fas fa-plus"></i> Criar Mesa
-                    </button>
+                    <button class="btn-add" onclick="abrirModalCriarMesa()">
+    <i class="fas fa-plus"></i> Criar Mesa
+</button>
                     
                     <div style="display: flex; gap: 15px; align-items: center;">
                         <span style="color: #28a745; font-weight: bold;">● Livre</span>
@@ -428,22 +428,6 @@
             </div>
         </div>
     </div>
-                <div class="mesa-comanda">
-                    <h4>Comanda da Mesa</h4>
-                    <div id="lista-pedidos-mesa" class="lista-pedidos-mesa">
-                        </div>
-                    <div class="mesa-total">
-                        <span>Total:</span>
-                        <span id="mesa-total-valor">R$ 0,00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer" style="justify-content: space-between;">
-                <button type="button" class="btn-cancel" style="background:#d9534f; color:white;" onclick="fecharContaMesa()">Fechar Conta</button>
-                <button type="button" class="btn-save" onclick="enviarParaCozinha()">Enviar Pedido</button>
-            </div>
-        </div>
-    </div>
 
     <div id="modal-confirm" class="modal-overlay" style="z-index: 2000;">
         <div class="modal-box" style="max-width: 400px; text-align: center;">
@@ -465,6 +449,40 @@
             <h3 id="aviso-titulo" style="margin-bottom: 10px;"></h3>
             <p id="aviso-msg" style="color: #666; margin-bottom: 20px;"></p>
             <button class="btn-save" onclick="document.getElementById('modal-aviso').style.display='none'" style="width: 100%;">OK</button>
+        </div>
+    </div>
+    <div id="modal-criar-mesa" class="modal-overlay">
+        <div class="modal-box" style="max-width: 350px;">
+            <div class="modal-header">
+                <h3>Nova Mesa</h3>
+                <span class="close-modal" onclick="fecharModalCriarMesa()">&times;</span>
+            </div>
+            
+            <form id="form-nova-mesa" onsubmit="confirmarCriacaoMesa(event)">
+                <div class="input-group">
+                    <label>Número da Mesa</label>
+                    <input type="number" id="nova-mesa-numero" placeholder="Ex: 15" required min="1" style="font-size: 1.2rem; text-align: center;">
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancel" onclick="fecharModalCriarMesa()">Cancelar</button>
+                    <button type="submit" class="btn-save">Criar Mesa</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="modal-fechar-conta" class="modal-overlay" style="z-index: 2002;">
+        <div class="modal-box" style="max-width: 400px; text-align: center;">
+            <div style="font-size: 3rem; color: #28a745; margin-bottom: 15px;">
+                <i class="fas fa-cash-register"></i>
+            </div>
+            <h3>Fechar Conta?</h3>
+            <p style="color: #666; margin-bottom: 25px;">Deseja finalizar o atendimento e liberar a mesa?</p>
+            
+            <div class="modal-footer" style="justify-content: center; gap: 10px;">
+                <button type="button" class="btn-cancel" onclick="document.getElementById('modal-fechar-conta').style.display='none'">Não</button>
+                <button type="button" class="btn-save" onclick="confirmarFechamentoContaReal()">Sim, Fechar</button>
+            </div>
         </div>
     </div>
 
